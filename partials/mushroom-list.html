@@ -1,0 +1,22 @@
+<article>
+
+	<header><h2>Check out the shrooms</h2></header>
+
+	<form>
+		<input type="text" ng-model="filter">
+		<br>
+		<label>Edible</label>
+		<input type="radio" name="edible" value="true" ng-model="query">
+		<label>Poisonous</label>
+		<input type="radio" name="poisonous" value="false" ng-model="query">
+	</form>
+
+	<section>
+		<div ng-repeat="item in shrooms | filter: {name:filter} | filter: {edible:query}">
+		<h3>{{ item.name }}</h3>
+		<p>{{ item.description }}</p>
+		</div>
+	</section>
+
+
+</article>
